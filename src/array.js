@@ -1,5 +1,3 @@
-import { abigail } from "./img/Abigail.png";
-
 export const characters = [
   {
     name: "Abigail",
