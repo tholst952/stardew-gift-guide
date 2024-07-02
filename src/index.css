@@ -16,16 +16,13 @@ html {
 }
 
 body {
-  /* height: 100vh; */
-  background: #2980b9; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #ffffff,
-    #6dd5fa,
-    #2980b9
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #ffffff, #6dd5fa, #2980b9);
-  /* height: 100vh; */
+  background: rgb(41, 128, 185);
+  background: linear-gradient(
+    0deg,
+    rgba(41, 128, 185, 1) 0%,
+    rgba(109, 213, 250, 1) 35%,
+    rgba(255, 255, 255, 1) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,13 +73,16 @@ body {
 }
 
 .sidebar li img {
-  /* width: 100%; */
-  border: 2px solid #777;
   grid-row: span 2;
 }
 
 .sidebar li h3 {
   font-size: 1.8rem;
+  text-align: center;
+}
+
+.sidebar li p {
+  text-align: center;
 }
 
 .main-heading {
@@ -91,7 +91,7 @@ body {
   letter-spacing: 1.3px;
   color: #181818;
   text-align: center;
-  margin-bottom: 3rem;
+  margin: 4rem auto;
 }
 
 img {

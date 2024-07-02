@@ -51,7 +51,7 @@ function Character({ charName, image, title }) {
       <img src={require(`${image}`)} alt={charName} />
       <div>
         <h3>{charName}</h3>
-        <span>{title}</span>
+        <p>{title}</p>
       </div>
 
       <Button>Select</Button>
