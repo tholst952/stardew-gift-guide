@@ -1,38 +1,60 @@
 import "./index.css";
-import { characters } from "./array.js";
+import { charData } from "./array.js";
 
-export default function App() {
+// Reusable Button------------------
+function Button({ children, onClick }) {
   return (
-    <div className="main">
-      <Heading />
-      <Sidebar characters={characters} />
-    </div>
+    <button className="button" onClick={onClick}>
+      {children}
+    </button>
   );
 }
 
-function Button() {
-  return <button></button>;
+export default function App() {
+  return (
+    <div className="app">
+      <Heading />
+      <div className="sidebar">
+        <CharacterList charData={charData} />
+      </div>
+    </div>
+  );
 }
 
 function Heading() {
   return (
-    <div>
-      <h1 className="main-heading">Stardew Gift Guide 🎁</h1>
+    <div className="main-heading">
+      <h1>Stardew Gift Guide 🎁</h1>
     </div>
   );
 }
 
-function Sidebar({ characters }) {
-  return characters.map((char) => (
-    <div className="card" key={char.name}>
-      <img src={require(`${char.image}`)} alt={char.name} />
-      {/* <p>{char.birthday}</p> */}
+function CharacterList({ charData }) {
+  return (
+    <ul>
+      {charData.map((char) => (
+        <Character
+          key={char.id}
+          charName={char.name}
+          title={char.title}
+          image={char.image}
+          birthday={char.birthday}
+        />
+      ))}
+    </ul>
+  );
+}
 
-      <div className="char-info">
-        <h3 className="char-name">{char.name}</h3>
-        <p className="char-title">{char.title}</p>
-        <button>Select</button>
+function Character({ charName, image, title }) {
+  return (
+    <li>
+      <img src={require(`${image}`)} alt={charName} />
+      <div>
+        <h3>{charName}</h3>
+        <span>{title}</span>
       </div>
-    </div>
-  ));
+
+      <Button>Select</Button>
+    </li>
+  );
 }

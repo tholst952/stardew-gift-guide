@@ -1,10 +1,11 @@
-export const characters = [
+export const charData = [
   {
     name: "Abigail",
     title: "Champion of the Egg Hunt",
     birthday: "Fall 13",
     gender: "gal",
     image: "./img/Abigail.png",
+    id: 834102,
     loves: [
       "amethyst",
       "pumpkin",
@@ -23,6 +24,7 @@ export const characters = [
     birthday: "Summer 13",
     gender: "guy",
     image: "./img/Alex.png",
+    id: 457203,
     loves: ["complete breakfast", "salmon dinner"],
     likes: ["egg", "duck egg"],
     hates: [],
@@ -33,6 +35,7 @@ export const characters = [
     birthday: "Fall 3",
     gender: "guy",
     image: "./img/Clancy.png",
+    id: 220475,
     loves: ["all minerals", "rainbow shell", "void egg"],
     likes: ["all artifacts", "espresso", "honey"],
     hates: ["melon", "all milk"],
@@ -43,6 +46,7 @@ export const characters = [
     birthday: "Winter 11",
     gender: "gal",
     image: "./img/Davy.png",
+    id: 970664,
     loves: [
       "corn",
       "iridium bar",
@@ -60,6 +64,7 @@ export const characters = [
     birthday: "Fall 5",
     gender: "guy",
     image: "./img/Elliott.png",
+    id: 112435,
     loves: [
       "pomegranate",
       "lobster",
@@ -82,6 +87,7 @@ export const characters = [
     birthday: "Spring 27",
     gender: "gal",
     image: "./img/Emily.png",
+    id: 998754,
     loves: [
       "wool",
       "cloth",
@@ -111,6 +117,7 @@ export const characters = [
     birthday: "Spring 14",
     gender: "gal",
     image: "./img/Haley.png",
+    id: 554332,
     loves: ["coconut", "sunflower", "fruit salad", "pink cake"],
     likes: ["daffodil"],
     hates: ["vegetables", "prismatic shard"],
@@ -121,6 +128,7 @@ export const characters = [
     birthday: "Winter 14",
     gender: "guy",
     image: "./img/Harvey.png",
+    id: 301836,
     loves: ["coffee", "pickles", "truffle oil", "wine", "super meal"],
     likes: [
       "daffodil",
@@ -150,6 +158,7 @@ export const characters = [
     birthday: "Winter 23",
     gender: "gal",
     image: "./img/Leah.png",
+    id: 257683,
     loves: [
       "truffle",
       "goat cheese",
@@ -190,6 +199,7 @@ export const characters = [
     birthday: "Fall 26",
     gender: "guy",
     image: "./img/Lou.png",
+    id: 110293,
     loves: [
       "maple syrup",
       "rice",
@@ -207,6 +217,7 @@ export const characters = [
     birthday: "Summer 10",
     gender: "gal",
     image: "./img/Maru.png",
+    id: 654534,
     loves: [
       "cauliflower",
       "strawberry",
@@ -236,6 +247,7 @@ export const characters = [
     birthday: "Fall 2",
     gender: "gal",
     image: "./img/Penny.png",
+    id: 905523,
     loves: [
       "melon",
       "poppy",
@@ -262,6 +274,7 @@ export const characters = [
     birthday: "Summer 17",
     gender: "guy",
     image: "./img/Sam.png",
+    id: 232202,
     loves: ["cactus fruit", "maple bar", "pizza", "tigerseye"],
     likes: ["joja cola", "egg", "duck egg"],
     hates: ["vegatables", "all mayonnaise", "pickles"],
@@ -272,6 +285,7 @@ export const characters = [
     birthday: "Winter 10",
     gender: "guy",
     image: "./img/Sebastian.png",
+    id: 182750,
     loves: ["void egg", "pumpkin soup", "frozen tear", "obsidian"],
     likes: ["quartz", "flounder"],
     hates: [
@@ -290,6 +304,7 @@ export const characters = [
     birthday: "Spring 20",
     gender: "guy",
     image: "./img/Shane.png",
+    id: 785332,
     loves: ["hot pepper", "beer", "pizza", "pepper poppers"],
     likes: ["fruit crops", "foraged fruits", "egg", "duck egg"],
     hates: ["pickles"],
@@ -301,6 +316,7 @@ export const characters = [
     birthday: "Summer 16",
     gender: "gal",
     image: "./img/Trena.png",
+    id: 801777,
     loves: ["potato", "hashbrowns", "pizza", "maple bar", "spaghetti"],
     likes: ["joja cola", "all minerals", "all flowers"],
     hates: ["vegatables", "salad", "all fish"],
