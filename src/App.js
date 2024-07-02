@@ -49,12 +49,11 @@ function Character({ charName, image, title }) {
   return (
     <li>
       <img src={require(`${image}`)} alt={charName} />
-      <div>
+      <div className="char-text">
         <h3>{charName}</h3>
         <p>{title}</p>
+        <Button>Select</Button>
       </div>
-
-      <Button>Select</Button>
     </li>
   );
 }

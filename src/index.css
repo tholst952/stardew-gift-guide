@@ -16,13 +16,18 @@ html {
 }
 
 body {
-  background: rgb(41, 128, 185);
+  background: #ff9966; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #ff5e62,
+    #ff9966
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    0deg,
-    rgba(41, 128, 185, 1) 0%,
-    rgba(109, 213, 250, 1) 35%,
-    rgba(255, 255, 255, 1) 100%
-  );
+    to bottom,
+    #ff5e62,
+    #ff9966
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,7 +52,17 @@ body {
 
 /* 🔰 */
 
+.main-heading {
+  font-family: "svbold";
+  font-size: 3rem;
+  letter-spacing: 1.3px;
+  color: #181818;
+  text-align: center;
+  margin: 4rem auto;
+}
+
 .app {
+  height: 100vh;
 }
 
 .sidebar {
@@ -58,7 +73,7 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 1.4rem;
-  gap: 0.4rem;
+  gap: 0.8rem;
   list-style: none;
 }
 
@@ -76,6 +91,13 @@ body {
   grid-row: span 2;
 }
 
+.char-text {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .sidebar li h3 {
   font-size: 1.8rem;
   text-align: center;
@@ -85,19 +107,11 @@ body {
   text-align: center;
 }
 
-.main-heading {
-  font-family: "svbold";
-  font-size: 3rem;
-  letter-spacing: 1.3px;
-  color: #181818;
-  text-align: center;
-  margin: 4rem auto;
+.sidebar li Button {
+  width: 100px;
+  margin-top: 1.2rem;
 }
 
 img {
   width: 128px;
-}
-
-.card {
-  display: flex;
 }
