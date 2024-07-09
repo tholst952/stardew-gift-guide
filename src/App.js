@@ -25,7 +25,7 @@ export default function App() {
             onSelect={setSelected}
           />
         </div>
-        <GiftSummary charData={charData} />
+        <GiftSummary charData={charData} selected={selected} />
       </div>
     </div>
   );
@@ -66,6 +66,9 @@ function CharacterList({ charData, selected, onSelect }) {
             title={char.title}
             image={char.image}
             birthday={char.birthday}
+            loves={char.loves}
+            likes={char.likes}
+            hates={char.hates}
             selected={selected}
             onSelect={onSelect}
           />
@@ -80,7 +83,7 @@ function CharacterList({ charData, selected, onSelect }) {
           <div className="btn-placeholder"></div>
         )}
         <span>
-          Page {currentPage} of {totalPages}
+          Page <strong>{currentPage}</strong> of {totalPages}
         </span>
         {currentPage < totalPages ? (
           <Button
@@ -113,7 +116,7 @@ function Character({ charName, image, title, selected, onSelect }) {
   );
 }
 
-function GiftSummary({}) {
+function GiftSummary({ selected }) {
   return (
     <div className="gifts-summary">
       <div className="gift-list loved">

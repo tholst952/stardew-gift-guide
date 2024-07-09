@@ -13,6 +13,7 @@
 html {
   font-size: 62.5%;
   font-family: "Roboto", sans-serif;
+  min-height: 100%;
 }
 
 body {
@@ -23,6 +24,7 @@ body {
     #43c6ac
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to top, #f8ffae, #43c6ac);
+  background-attachment: fixed;
 
   display: flex;
   align-items: center;
@@ -32,7 +34,7 @@ body {
 /* 🔰 */
 
 .button {
-  background-color: #ffa94d;
+  background-color: #b4c643;
   color: #343a40;
   padding: 0.8rem 1.2rem;
   border: none;
@@ -43,7 +45,7 @@ body {
 }
 
 .button:hover {
-  background-color: #ff922b;
+  background-color: #85922f;
 }
 
 /* 🔰 */
@@ -77,19 +79,14 @@ body {
 
 .sidebar li {
   background-color: #ffe8cc;
-  /* display: grid;
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center; */
-  display: flex;
   align-items: center;
   border-radius: 7px;
   transition: 0.5s;
   /* column-gap: 2rem; */
   width: 300px;
-}
-
-.sidebar li img {
-  grid-row: span 2;
+  padding-top: 1rem;
 }
 
 .char-text {
@@ -108,19 +105,14 @@ body {
   text-align: center;
 }
 
-/* .sidebar li Button {
-  width: 100px;
-  margin-top: 1.2rem;
-} */
-
 img {
   width: 128px;
 }
 
 .selected {
-  -webkit-box-shadow: inset 0px 0px 0px 10px #ff922b;
-  -moz-box-shadow: inset 0px 0px 0px 10px #ff922b;
-  box-shadow: inset 0px 0px 0px 10px #ff922b;
+  -webkit-box-shadow: inset 0px 0px 0px 10px #b4c643;
+  -moz-box-shadow: inset 0px 0px 0px 10px #b4c643;
+  box-shadow: inset 0px 0px 0px 10px #b4c643;
 }
 
 /* PAGINATION UNDERNEATH CHARACTER LIST */
@@ -133,7 +125,7 @@ img {
 }
 
 .pagination Button {
-  background-color: #ffd666;
+  background-color: #b4c643;
   width: 106px;
   height: 36px;
 }
@@ -157,16 +149,16 @@ img {
 }
 
 .loved {
-  border: 6px solid #de87ff;
+  border: 6px solid #8043c6;
   border-radius: 7px;
 }
 
 .liked {
-  border: 6px solid #a8e16e;
+  border: 6px solid #4373c6;
   border-radius: 7px;
 }
 
 .hated {
-  border: 6px solid #7a7878;
+  border: 6px solid #7d8784;
   border-radius: 7px;
 }
