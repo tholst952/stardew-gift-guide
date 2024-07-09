@@ -12,14 +12,20 @@ function Button({ children, onClick }) {
 }
 
 export default function App() {
+  const [selected, setSelected] = useState(null);
+
   return (
     <div>
       <Heading />
       <div className="app">
         <div className="sidebar">
-          <CharacterList charData={charData} />
+          <CharacterList
+            charData={charData}
+            selected={selected}
+            onSelect={setSelected}
+          />
         </div>
-        <GiftSummary />
+        <GiftSummary charData={charData} />
       </div>
     </div>
   );
@@ -33,7 +39,7 @@ function Heading() {
   );
 }
 
-function CharacterList({ charData }) {
+function CharacterList({ charData, selected, onSelect }) {
   const [currentPage, setCurrentPage] = useState(1);
   const charactersPerPage = 4;
   const totalPages = Math.ceil(charData.length / charactersPerPage);
@@ -60,43 +66,66 @@ function CharacterList({ charData }) {
             title={char.title}
             image={char.image}
             birthday={char.birthday}
+            selected={selected}
+            onSelect={onSelect}
           />
         ))}
       </ul>
       <div className="pagination">
-        <Button onClick={handlePreviousPage} disabled={currentPage === 1}>
-          Previous
-        </Button>
+        {currentPage > 1 ? (
+          <Button onClick={handlePreviousPage} disabled={currentPage === 1}>
+            👈🏼 Previous
+          </Button>
+        ) : (
+          <div className="btn-placeholder"></div>
+        )}
         <span>
           Page {currentPage} of {totalPages}
         </span>
-        <Button onClick={handleNextPage} disabled={currentPage === totalPages}>
-          Next
-        </Button>
+        {currentPage < totalPages ? (
+          <Button
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
+          >
+            Next 👉🏼
+          </Button>
+        ) : (
+          <div className="btn-placeholder"></div>
+        )}
       </div>
     </div>
   );
 }
 
-function Character({ charName, image, title }) {
+function Character({ charName, image, title, selected, onSelect }) {
   return (
-    <li>
+    <li
+      className={selected === charName ? "selected" : ""}
+      onClick={() => onSelect(charName)}
+    >
       <img src={require(`${image}`)} alt={charName} />
       <div className="char-text">
         <h3>{charName}</h3>
         <p>{title}</p>
-        <Button>Select</Button>
+        {/* <Button>Select</Button> */}
       </div>
     </li>
   );
 }
 
-function GiftSummary() {
+function GiftSummary({}) {
   return (
     <div className="gifts-summary">
-      <div className="gift-list loved">💟 Loved Gifts</div>
-      <div className="gift-list liked">⭐ Liked Gifts</div>
-      <div className="gift-list hated">❌ Hated Gifts</div>
+      <div className="gift-list loved">
+        <p>💟 Loved Gifts</p>
+        <p>{}</p>
+      </div>
+      <div className="gift-list liked">
+        <p>⭐ Liked Gifts</p>
+      </div>
+      <div className="gift-list hated">
+        <p>❌ Hated Gifts</p>
+      </div>
     </div>
   );
 }

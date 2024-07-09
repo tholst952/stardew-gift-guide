@@ -16,17 +16,13 @@ html {
 }
 
 body {
-  background: #ff9966; /* fallback for old browsers */
+  background: #43c6ac;
   background: -webkit-linear-gradient(
-    to bottom,
-    #ff5e62,
-    #ff9966
+    to top,
+    #f8ffae,
+    #43c6ac
   ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    #ff5e62,
-    #ff9966
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to top, #f8ffae, #43c6ac);
 
   display: flex;
   align-items: center;
@@ -68,9 +64,7 @@ body {
   column-gap: 1.8rem;
 }
 
-.sidebar {
-  /* width: 55%; */
-}
+/* SIDEBAR LIST OF CHARACTERS */
 
 .sidebar ul {
   display: flex;
@@ -83,8 +77,10 @@ body {
 
 .sidebar li {
   background-color: #ffe8cc;
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center; */
+  display: flex;
   align-items: center;
   border-radius: 7px;
   transition: 0.5s;
@@ -112,24 +108,42 @@ body {
   text-align: center;
 }
 
-.sidebar li Button {
+/* .sidebar li Button {
   width: 100px;
   margin-top: 1.2rem;
-}
+} */
 
 img {
   width: 128px;
 }
 
-/* Pagination */
+.selected {
+  -webkit-box-shadow: inset 0px 0px 0px 10px #ff922b;
+  -moz-box-shadow: inset 0px 0px 0px 10px #ff922b;
+  box-shadow: inset 0px 0px 0px 10px #ff922b;
+}
+
+/* PAGINATION UNDERNEATH CHARACTER LIST */
 .pagination {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
+  gap: 0.5rem;
   font-size: 1.4rem;
 }
 
-/* gift summary */
+.pagination Button {
+  background-color: #ffd666;
+  width: 106px;
+  height: 36px;
+}
+
+.btn-placeholder {
+  width: 106px;
+  height: 36px;
+}
+
+/* GIFT SUMMARY WHERE ARRAYS ARE DISPLAYED */
 .gifts-summary {
   display: flex;
   flex-direction: column;
