@@ -63,10 +63,13 @@ body {
 
 .app {
   height: 100vh;
+  display: grid;
+  grid-template-columns: 47% 53%;
+  column-gap: 1.8rem;
 }
 
 .sidebar {
-  width: 55%;
+  /* width: 55%; */
 }
 
 .sidebar ul {
@@ -75,6 +78,7 @@ body {
   font-size: 1.4rem;
   gap: 0.8rem;
   list-style: none;
+  margin-bottom: 1.2rem;
 }
 
 .sidebar li {
@@ -85,6 +89,7 @@ body {
   border-radius: 7px;
   transition: 0.5s;
   /* column-gap: 2rem; */
+  width: 300px;
 }
 
 .sidebar li img {
@@ -114,4 +119,40 @@ body {
 
 img {
   width: 128px;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+/* gift summary */
+.gifts-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.gift-list {
+  background-color: #ffe8cc;
+  padding: 2.4rem 4.8rem;
+  font-size: 1.8rem;
+}
+
+.loved {
+  border: 6px solid #de87ff;
+  border-radius: 7px;
+}
+
+.liked {
+  border: 6px solid #a8e16e;
+  border-radius: 7px;
+}
+
+.hated {
+  border: 6px solid #7a7878;
+  border-radius: 7px;
 }
