@@ -26,6 +26,7 @@ export default function App() {
           />
         </div>
         <GiftSummary charData={charData} selected={selected} />
+        <Footer />
       </div>
     </div>
   );
@@ -75,7 +76,7 @@ function CharacterList({ charData, selected, onSelect }) {
       <div className="pagination">
         {currentPage > 1 ? (
           <Button onClick={handlePreviousPage} disabled={currentPage === 1}>
-            👈🏼 Previous
+            <span>&larr; Previous</span>
           </Button>
         ) : (
           <div className="btn-placeholder"></div>
@@ -88,7 +89,7 @@ function CharacterList({ charData, selected, onSelect }) {
             onClick={handleNextPage}
             disabled={currentPage === totalPages}
           >
-            Next 👉🏼
+            <span>Next &rarr;</span>
           </Button>
         ) : (
           <div className="btn-placeholder"></div>
@@ -143,5 +144,20 @@ function GiftSummary({ charData, selected }) {
         </ul>
       </div>
     </div>
+  );
+}
+
+function Footer() {
+  return (
+    <footer>
+      <p>
+        All Stardew Valley characters are the creation and property of Eric
+        Barone ConcernedApe
+      </p>
+      <p>
+        Clancy, Davy, Lou and Trena were created with the Stardew Valley
+        Character Portrait maker, created by Jazzybee
+      </p>
+    </footer>
   );
 }
