@@ -134,7 +134,7 @@ export const charData = [
       "daffodil",
       "dandelion",
       "all fruit crops",
-      "all foraged fruits (no salmonberry or spice berry)",
+      "all foraged fruits",
       "most forageables",
       "most mushrooms",
       "duck egg",
