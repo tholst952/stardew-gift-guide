@@ -27,7 +27,7 @@ export const charData = [
     id: 457203,
     loves: ["complete breakfast", "salmon dinner"],
     likes: ["egg", "duck egg"],
-    hates: [],
+    hates: ["none"],
   },
   {
     name: "Clancy",
@@ -75,7 +75,7 @@ export const charData = [
     ],
     likes: [
       "all fruit crops",
-      "all foraged fruits (except salmonberry)",
+      "all foraged fruits (no salmonberry)",
       "octopus",
       "squid",
     ],
@@ -134,7 +134,7 @@ export const charData = [
       "daffodil",
       "dandelion",
       "all fruit crops",
-      "all foraged fruits (except salmonberry and spice berry)",
+      "all foraged fruits (no salmonberry or spice berry)",
       "most forageables",
       "most mushrooms",
       "duck egg",
@@ -180,7 +180,7 @@ export const charData = [
       "driftwood",
     ],
     hates: [
-      "all gems (besides diamond)",
+      "all gems (no diamond)",
       "pancakes",
       "hashbrowns",
       "carp surprise",

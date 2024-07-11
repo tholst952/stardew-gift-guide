@@ -119,7 +119,7 @@ function GiftSummary({ charData, selected }) {
   return (
     <div className="gifts-summary">
       <div className="gift-list loves">
-        <h4>💟 Loved Gifts</h4>
+        <h4 className="summary-title">💟 Loved Gifts</h4>
         <ul>
           {selectedChar.loves.map((gift, i) => (
             <li key={i}>{gift}</li>
@@ -127,7 +127,7 @@ function GiftSummary({ charData, selected }) {
         </ul>
       </div>
       <div className="gift-list likes">
-        <h4>⭐ Liked Gifts</h4>
+        <h4 className="summary-title">⭐ Liked Gifts</h4>
         <ul>
           {selectedChar.likes.map((gift, i) => (
             <li key={i}>{gift}</li>
@@ -135,7 +135,7 @@ function GiftSummary({ charData, selected }) {
         </ul>
       </div>
       <div className="gift-list hates">
-        <h4>❌ Hated Gifts</h4>
+        <h4 className="summary-title">❌ Hated Gifts</h4>
         <ul>
           {selectedChar.hates.map((gift, i) => (
             <li key={i}>{gift}</li>
