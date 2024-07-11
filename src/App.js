@@ -50,6 +50,7 @@ function CharacterList({ charData, selected, onSelect }) {
 
   const handlePreviousPage = () => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+    console.log(charData);
   };
 
   const handleNextPage = () => {
@@ -66,9 +67,6 @@ function CharacterList({ charData, selected, onSelect }) {
             title={char.title}
             image={char.image}
             birthday={char.birthday}
-            loves={char.loves}
-            likes={char.likes}
-            hates={char.hates}
             selected={selected}
             onSelect={onSelect}
           />
@@ -110,24 +108,39 @@ function Character({ charName, image, title, selected, onSelect }) {
       <div className="char-text">
         <h3>{charName}</h3>
         <p>{title}</p>
-        {/* <Button>Select</Button> */}
       </div>
     </li>
   );
 }
 
-function GiftSummary({ selected }) {
+function GiftSummary({ charData, selected }) {
+  const selectedChar = charData.find((char) => char.name === selected);
+
   return (
     <div className="gifts-summary">
-      <div className="gift-list loved">
-        <p>💟 Loved Gifts</p>
-        <p>{}</p>
+      <div className="gift-list loves">
+        <h4>💟 Loved Gifts</h4>
+        <ul>
+          {selectedChar.loves.map((gift, i) => (
+            <li key={i}>{gift}</li>
+          ))}
+        </ul>
       </div>
-      <div className="gift-list liked">
-        <p>⭐ Liked Gifts</p>
+      <div className="gift-list likes">
+        <h4>⭐ Liked Gifts</h4>
+        <ul>
+          {selectedChar.likes.map((gift, i) => (
+            <li key={i}>{gift}</li>
+          ))}
+        </ul>
       </div>
-      <div className="gift-list hated">
-        <p>❌ Hated Gifts</p>
+      <div className="gift-list hates">
+        <h4>❌ Hated Gifts</h4>
+        <ul>
+          {selectedChar.hates.map((gift, i) => (
+            <li key={i}>{gift}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
