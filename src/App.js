@@ -1,5 +1,6 @@
 import "./index.css";
-import { charData } from "./array.js";
+import { charData } from "./charArray.js";
+import { universalLoves, universalLikes } from "./universalArrays.js";
 import { useState } from "react";
 
 // Reusable Button------------------
@@ -17,7 +18,7 @@ export default function App() {
   return (
     <div>
       <Heading />
-      <UniversalSection />
+      <UniversalSection uniLoves={universalLoves} uniLikes={universalLikes} />
       <div className="app">
         <div className="sidebar">
           <CharacterList
@@ -41,10 +42,36 @@ function Heading() {
   );
 }
 
-function UniversalSection() {
+function UniversalSection({ uniLoves, uniLikes }) {
   return (
     <div className="universal-section">
-      <h4>Universal Gifts that apply to everyone 👨‍👩‍👦‍👦</h4>
+      <h4 className="uni-headline">
+        <em>💌 Universal Gifts apply to everyone! </em>👨‍👩‍👦‍👦
+      </h4>
+
+      <div className="uni-lists">
+        <div className="uniLoves">
+          <h4 className="uni-subheadline">
+            Universally <span className="spanEffect">Loved</span> Gifts 🌸
+          </h4>
+          <ul className="uniLovesList">
+            {uniLoves.map((gift, i) => (
+              <li key={i}>{gift}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="uniLikes">
+          <h4 className="uni-subheadline">
+            Universally <span className="spanEffect">Liked</span> Gifts 🌾
+          </h4>
+          <ul className="uniLikesList">
+            {uniLikes.map((gift, i) => (
+              <li key={i}>{gift}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }

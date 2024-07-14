@@ -29,7 +29,7 @@ body {
   background: -webkit-linear-gradient(
     to top,
     #f7797d,
-    #fbd786,
+    #e2fb86,
     #c6ffdd
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
@@ -85,10 +85,84 @@ body {
 
 .universal-section {
   background-color: #ffe8cc;
+  border-top: 2px dashed #222222;
+  border-radius: 7px;
   width: 900px;
   margin: 3rem auto;
-  padding: 7.2rem;
+  padding: 0 7.2rem;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 2px 8px, rgba(0, 0, 0, 0.23) 0px 4px 6px;
+}
+
+.uni-lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 9rem;
+  font-size: 1.8rem;
+  padding-bottom: 2rem;
+}
+
+.uni-headline {
+  grid-column: span 2;
+  text-align: center;
+  font-size: 2.2rem;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  color: #f7797d;
+}
+
+.uni-subheadline {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.spanEffect {
+  /* color: #fff; */
+  position: relative;
+  z-index: 1;
+  margin: 0 0.6rem;
+}
+
+.spanEffect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -5px;
+  right: -5px;
+  background-color: #fac885;
+  transform: skew(-15deg);
+  z-index: -1;
+}
+
+.uniLoves {
+  grid-row: 2 / -2;
+  align-self: self-start;
+}
+
+.uniLovesList {
+  -moz-column-count: 2;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 5;
+  -webkit-column-gap: 20px;
+  column-count: 2;
+  column-gap: 4rem;
+  line-height: 1.4;
+}
+
+.uniLikes {
+  grid-row: -2 / -1;
+}
+
+.uniLikesList {
+  -moz-column-count: 3;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 5;
+  -webkit-column-gap: 20px;
+  column-count: 2;
+  column-gap: 4rem;
+  line-height: 1.4;
 }
 
 .app {
@@ -208,7 +282,7 @@ img {
   -webkit-column-gap: 20px;
   column-count: 3;
   column-gap: 4rem;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 /* FOOTER */

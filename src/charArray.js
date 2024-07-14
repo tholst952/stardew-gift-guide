@@ -317,8 +317,8 @@ export const charData = [
     gender: "gal",
     image: "./img/Trena.png",
     id: 801777,
-    loves: ["potato", "hashbrowns", "pizza", "maple bar", "spaghetti"],
+    loves: ["potato", "books", "all artifacts", "maple bar", "all dolls"],
     likes: ["joja cola", "all minerals", "all flowers"],
-    hates: ["vegatables", "salad", "all fish"],
+    hates: ["vegetables", "salad", "all fish"],
   },
 ];
