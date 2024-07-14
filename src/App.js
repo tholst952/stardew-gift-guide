@@ -52,7 +52,7 @@ function UniversalSection({ uniLoves, uniLikes }) {
       <div className="uni-lists">
         <div className="uniLoves">
           <h4 className="uni-subheadline">
-            Universally <span className="spanEffect">Loved</span> Gifts 🌸
+            Universally <span className="spanEffect">Loved</span> Gifts 💛
           </h4>
           <ul className="uniLovesList">
             {uniLoves.map((gift, i) => (
@@ -63,7 +63,7 @@ function UniversalSection({ uniLoves, uniLikes }) {
 
         <div className="uniLikes">
           <h4 className="uni-subheadline">
-            Universally <span className="spanEffect">Liked</span> Gifts 🌾
+            Universally <span className="spanEffect">Liked</span> Gifts 🌻
           </h4>
           <ul className="uniLikesList">
             {uniLikes.map((gift, i) => (
