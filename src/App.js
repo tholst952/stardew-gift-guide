@@ -17,6 +17,7 @@ export default function App() {
   return (
     <div>
       <Heading />
+      <UniversalSection />
       <div className="app">
         <div className="sidebar">
           <CharacterList
@@ -36,6 +37,14 @@ function Heading() {
   return (
     <div className="main-heading">
       <h1>Stardew Gift Guide 🎁</h1>
+    </div>
+  );
+}
+
+function UniversalSection() {
+  return (
+    <div className="universal-section">
+      <h4>Universal Gifts that apply to everyone 👨‍👩‍👦‍👦</h4>
     </div>
   );
 }
@@ -116,6 +125,8 @@ function Character({ charName, image, title, selected, onSelect }) {
 
 function GiftSummary({ charData, selected }) {
   const selectedChar = charData.find((char) => char.name === selected);
+
+  if (!selectedChar) return;
 
   return (
     <div className="gifts-summary">
