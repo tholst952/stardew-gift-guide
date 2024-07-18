@@ -17,79 +17,55 @@ html {
 }
 
 body {
-  /* background: #43c6ac;
-  background: -webkit-linear-gradient(
-    to top,
-    #f8ffae,
-    #43c6ac
-  ); 
-  background: linear-gradient(to top, #f8ffae, #43c6ac); */
-
-  background: #c6ffdd; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #f7797d,
-    #e2fb86,
-    #c6ffdd
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #f7797d,
-    #fbd786,
-    #c6ffdd
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #c6ffdd;
+  background: -webkit-linear-gradient(to top, #f7797d, #e2fb86, #c6ffdd);
+  background: linear-gradient(to top, #f7797d, #fbd786, #c6ffdd);
   background-attachment: fixed;
-
-  display: flex;
-  justify-content: center;
 }
 
-/* 🔰 */
+/*******************************************/
+/* APP */
+/*******************************************/
 
-.button {
-  /* background-color: #b4c643;
-  color: #343a40; */
-  background-color: #313131;
-  color: #fff;
-  padding: 0.8rem 1.2rem;
-  border: none;
-  border-radius: 7px;
-  /* font-weight: bold; */
-  font-size: 14px;
-  cursor: pointer;
-  border: none;
-  transition: 0.3s;
+.app {
+  width: 950px;
+  margin: 0 auto;
 }
 
-.button:hover {
-  /* background-color: #85922f; */
-  background-color: #222222;
-}
+/*******************************************/
+/* HEADING / HERO SECTION */
+/*******************************************/
 
-.button span {
+.heading-content {
   text-align: center;
 }
-
-/* 🔰 */
 
 .main-heading {
   font-family: "svbold";
   font-size: 3rem;
   letter-spacing: 1.3px;
-  /* color: #181818; */
   color: #222222;
-  text-align: center;
-  margin: 2rem 0 3rem 0;
+  margin-top: 2rem;
+  margin-bottom: 2.2rem;
 }
 
+.main-guide-summary {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #222222;
+}
+
+/*******************************************/
+/* UNIVERSAL SECTION */
+/*******************************************/
+
 .universal-section {
-  background-color: #ffe8cc;
-  border-top: 2px dashed #222222;
+  /* background-color: #ffe8cc; */
+  background-color: #fdf4f0;
   border-radius: 7px;
-  width: 900px;
-  margin: 3rem auto;
-  padding: 0 7.2rem;
+  padding: 2.4rem;
+  padding-top: 1rem;
+  margin: 2rem 0;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 2px 8px, rgba(0, 0, 0, 0.23) 0px 4px 6px;
 }
 
@@ -99,32 +75,39 @@ body {
   grid-template-rows: auto auto;
   column-gap: 9rem;
   font-size: 1.8rem;
-  padding-bottom: 4rem;
-}
-
-.uni-headline {
-  grid-column: span 2;
-  text-align: center;
-  font-size: 2.2rem;
-  padding: 1rem 0;
-  margin-bottom: 1rem;
-  color: #f7797d;
 }
 
 .uni-subheadline {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  text-align: left;
+  text-align: center;
 }
 
-.spanEffect {
-  /* color: #fff; */
+.spanEffect1 {
   position: relative;
   z-index: 1;
   margin: 0 0.6rem;
 }
 
-.spanEffect::before {
+.spanEffect1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -5px;
+  right: -5px;
+  background-color: #f7797d;
+  transform: skew(-15deg);
+  z-index: -1;
+}
+
+.spanEffect2 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0.6rem;
+}
+
+.spanEffect2::before {
   content: "";
   position: absolute;
   top: 0;
@@ -149,6 +132,7 @@ body {
   column-count: 2;
   column-gap: 3rem;
   line-height: 1.4;
+  /* list-style-type: none; */
 }
 
 .uniLikes {
@@ -163,29 +147,35 @@ body {
   column-count: 2;
   column-gap: 3rem;
   line-height: 1.4;
+  /* list-style-type: none; */
 }
 
-.app {
-  width: 950px;
-  /* height: 100vh; */
+/*******************************************/
+/* MAIN CONTENT GRID SIDEBAR-SUMMARY-PAGINATION */
+/*******************************************/
+
+.main {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  /* column-gap: 1rem; */
+  column-gap: 3rem;
 }
 
-/* SIDEBAR LIST OF CHARACTERS */
+/*******************************************/
+/* SIDEBAR CHARACTER LIST */
+/*******************************************/
+
 .sidebar {
-  width: 350px;
+  /* width: 350px; */
 }
 
 .sidebar ul {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   font-size: 1.4rem;
-  gap: 1.5rem;
+  gap: 1rem;
   list-style: none;
   margin-bottom: 1.2rem;
+  padding: 0;
 }
 
 .sidebar li {
@@ -194,17 +184,17 @@ body {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   border-radius: 7px;
-  transition: 0.5s;
-  padding-top: 0.4rem;
+  transition: 0.3s;
+  padding-top: 0.8rem;
   padding-left: 3rem;
   cursor: pointer;
 }
 
 .char-text {
-  padding: 2.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-right: 1rem;
 }
 
 .sidebar li h3 {
@@ -214,6 +204,10 @@ body {
 
 .sidebar li p {
   text-align: center;
+}
+
+.sidebar .birthday {
+  margin-top: 1rem;
 }
 
 img {
@@ -226,10 +220,13 @@ img {
   box-shadow: inset 0px 0px 0px 10px #222222;
 }
 
-/* PAGINATION UNDERNEATH CHARACTER LIST */
+/*******************************************/
+/* PAGINATION UNDERNEATH SIDEBAR */
+/*******************************************/
+
 .pagination {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   gap: 1.5rem;
   margin-bottom: 7.2rem;
@@ -237,9 +234,7 @@ img {
 }
 
 .pagination Button {
-  /* background-color: #b4c643; */
   background-color: #313131;
-
   width: 106px;
   height: 36px;
 }
@@ -249,12 +244,39 @@ img {
   height: 36px;
 }
 
+/*******************************************/
+/* REUSABLE BUTTON */
+/*******************************************/
+
+.button {
+  background-color: #313131;
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 7px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: #222222;
+}
+
+.button span {
+  text-align: center;
+}
+
+/*******************************************/
 /* GIFT SUMMARY WHERE ARRAYS ARE DISPLAYED */
+/*******************************************/
+
 .gifts-summary {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  margin-right: 2.2rem;
+  /* margin-right: 2.2rem; */
 }
 
 .summary-title {
@@ -268,7 +290,7 @@ img {
   border-radius: 7px;
   font-size: 1.8rem;
   flex: 0;
-  min-height: 185px;
+  min-height: 190px;
   max-height: 200px;
   overflow-y: auto;
   /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
@@ -283,9 +305,13 @@ img {
   column-count: 3;
   column-gap: 4rem;
   line-height: 1.4;
+  /* list-style-type: none; */
 }
 
+/*******************************************/
 /* FOOTER */
+/*******************************************/
+
 footer {
   font-size: 1.6rem;
   grid-column: span 2;

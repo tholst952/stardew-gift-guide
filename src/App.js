@@ -16,10 +16,12 @@ export default function App() {
   const [selected, setSelected] = useState(null);
 
   return (
-    <div>
-      <Heading />
+    <div className="app">
+      <div className="hero-section">
+        <Heading />
+      </div>
       <UniversalSection uniLoves={universalLoves} uniLikes={universalLikes} />
-      <div className="app">
+      <div className="main">
         <div className="sidebar">
           <CharacterList
             charData={charData}
@@ -36,8 +38,17 @@ export default function App() {
 
 function Heading() {
   return (
-    <div className="main-heading">
-      <h1>Stardew Gift Guide 🎁</h1>
+    <div className="heading-content">
+      <div className="main-heading">
+        <h1>Stardew Valley Gift Guide 🎁</h1>
+      </div>
+      <div>
+        <p className="main-guide-summary">
+          It's always a good idea to build and maintain relationships with your
+          neighbors in Stardew Valley. One of the best ways to do that is by
+          giving gifts on birthdays!
+        </p>
+      </div>
     </div>
   );
 }
@@ -45,14 +56,10 @@ function Heading() {
 function UniversalSection({ uniLoves, uniLikes }) {
   return (
     <div className="universal-section">
-      <h4 className="uni-headline">
-        <em>💌 Universal Gifts apply to everyone! </em>👨‍👩‍👦‍👦
-      </h4>
-
       <div className="uni-lists">
         <div className="uniLoves">
           <h4 className="uni-subheadline">
-            Universally <span className="spanEffect">Loved</span> Gifts 💛
+            Universally <span className="spanEffect1">Loved</span> Gifts 💗
           </h4>
           <ul className="uniLovesList">
             {uniLoves.map((gift, i) => (
@@ -63,7 +70,7 @@ function UniversalSection({ uniLoves, uniLikes }) {
 
         <div className="uniLikes">
           <h4 className="uni-subheadline">
-            Universally <span className="spanEffect">Liked</span> Gifts 🌻
+            Universally <span className="spanEffect2">Liked</span> Gifts ⭐
           </h4>
           <ul className="uniLikesList">
             {uniLikes.map((gift, i) => (
@@ -87,7 +94,6 @@ function CharacterList({ charData, selected, onSelect }) {
 
   const handlePreviousPage = () => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-    console.log(charData);
   };
 
   const handleNextPage = () => {
@@ -135,7 +141,7 @@ function CharacterList({ charData, selected, onSelect }) {
   );
 }
 
-function Character({ charName, image, title, selected, onSelect }) {
+function Character({ charName, image, birthday, title, selected, onSelect }) {
   return (
     <li
       className={selected === charName ? "selected" : ""}
@@ -145,6 +151,7 @@ function Character({ charName, image, title, selected, onSelect }) {
       <div className="char-text">
         <h3>{charName}</h3>
         <p>{title}</p>
+        <p className="birthday"> 📅 {birthday}</p>
       </div>
     </li>
   );
