@@ -50,7 +50,7 @@ body {
 }
 
 .main-guide-summary {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: #222222;
 }
@@ -157,7 +157,7 @@ body {
 .main {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  column-gap: 3rem;
+  column-gap: 1.6rem;
 }
 
 /*******************************************/

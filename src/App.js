@@ -1,7 +1,7 @@
 import "./index.css";
 import { charData } from "./charArray.js";
 import { universalLoves, universalLikes } from "./universalArrays.js";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Reusable Button------------------
 function Button({ children, onClick }) {
@@ -42,11 +42,10 @@ function Heading() {
       <div className="main-heading">
         <h1>Stardew Valley Gift Guide 🎁</h1>
       </div>
-      <div>
-        <p className="main-guide-summary">
-          It's always a good idea to build and maintain relationships with your
-          neighbors in Stardew Valley. One of the best ways to do that is by
-          giving gifts on birthdays!
+      <div className="main-guide-summary">
+        <p>
+          To build and maintain relationships with your neighbors in Stardew
+          Valley, give them a gift on their birthday!
         </p>
       </div>
     </div>
@@ -92,6 +91,23 @@ function CharacterList({ charData, selected, onSelect }) {
   const endIndex = startIndex + charactersPerPage;
   const currentCharacters = charData.slice(startIndex, endIndex);
 
+  const [hasManualSelection, setHasManualSelection] = useState(false);
+
+  useEffect(() => {
+    if (!hasManualSelection && currentCharacters.length > 0) {
+      onSelect(currentCharacters[0].name);
+    }
+  }, [currentCharacters, hasManualSelection, onSelect]);
+
+  useEffect(() => {
+    setHasManualSelection(false);
+  }, [currentPage]);
+
+  const handleSelect = (name) => {
+    setHasManualSelection(true);
+    onSelect(name);
+  };
+
   const handlePreviousPage = () => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
   };
@@ -111,7 +127,7 @@ function CharacterList({ charData, selected, onSelect }) {
             image={char.image}
             birthday={char.birthday}
             selected={selected}
-            onSelect={onSelect}
+            onSelect={handleSelect}
           />
         ))}
       </ul>
